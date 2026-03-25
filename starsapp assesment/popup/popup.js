@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function checkTab(tabId, onResult) {
+const checkTab = (tabId, onResult) => {
   chrome.tabs.sendMessage(tabId, { type: 'SD_QUERY' }, (response) => {
     if (chrome.runtime.lastError) return; // page load ho rahi hai
 
@@ -26,27 +26,27 @@ function checkTab(tabId, onResult) {
     else if (val === '0') { showNotFound(); onResult?.(); }
     else showScanning();
   });
-}
+};
 
-function showDetected() {
+const showDetected = () => {
   const wrap = document.getElementById('popup-wrap');
   wrap.classList.remove('state-not-found');
   wrap.classList.add('state-detected');
   document.getElementById('status-title').textContent = 'Shopify Store';
   document.getElementById('status-sub').textContent   = 'This website is built with Shopify.';
-}
+};
 
-function showNotFound() {
+const showNotFound = () => {
   const wrap = document.getElementById('popup-wrap');
   wrap.classList.remove('state-detected');
   wrap.classList.add('state-not-found');
   document.getElementById('status-title').textContent = 'Not a Shopify Store';
   document.getElementById('status-sub').textContent   = 'No Shopify detected on this page.';
-}
+};
 
-function showScanning() {
+const showScanning = () => {
   const wrap = document.getElementById('popup-wrap');
   wrap.classList.remove('state-detected', 'state-not-found');
   document.getElementById('status-title').textContent = 'Scanning...';
   document.getElementById('status-sub').textContent   = 'Waiting for page to finish loading.';
-}
+};

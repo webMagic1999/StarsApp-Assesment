@@ -60,8 +60,8 @@ The script reads the current variant using two methods, in order of preference:
 Shopify keeps a `<script data-selected-variant>` tag inside the `<variant-selects>` element that always holds the full variant title as JSON. This is the most reliable source.
 
 ```js
-var script = root.querySelector('script[data-selected-variant]');
-var data = JSON.parse(script.textContent);
+const script = root.querySelector('script[data-selected-variant]');
+const data = JSON.parse(script.textContent);
 return data.title; // e.g. "Red / Large"
 ```
 
@@ -69,7 +69,7 @@ return data.title; // e.g. "Red / Large"
 If the JSON tag is not present, the script reads all `checked` radio inputs inside `<variant-selects>` and joins their values.
 
 ```js
-var parts = Array.from(root.querySelectorAll('input[type="radio"]:checked'))
+const parts = Array.from(root.querySelectorAll('input[type="radio"]:checked'))
   .map(el => el.value);
 return parts.join(' / '); // e.g. "Red / Large"
 ```
@@ -153,10 +153,9 @@ User selects a new variant
 
 ```
 starsapp assesment 2/
-└── src/
-    ├── variant-badge.js    # Main script (IIFE — safe to paste in console)
-    ├── variant-badge.css   # Reference stylesheet (styles are inlined in .js)
-    └── README.md
+├── variant-badge.js    # Main script (IIFE — safe to paste in console)
+├── variant-badge.css   # Reference stylesheet (styles are inlined in .js)
+└── README.md
 ```
 
 > The CSS in `variant-badge.css` is the same as the `BADGE_STYLES` string inlined inside `variant-badge.js`. The `.css` file is kept separately as a readable reference.

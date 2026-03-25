@@ -2,19 +2,19 @@
 
 const html = document.documentElement;
 
-function notifyBackground(isShopify) {
+const notifyBackground = (isShopify) => {
   chrome.runtime.sendMessage(
     { type: isShopify ? 'SHOPIFY_YES' : 'SHOPIFY_NO' },
     () => void chrome.runtime.lastError
   );
-}
+};
 
-function readAndNotify() {
+const readAndNotify = () => {
   const val = html.dataset.sdResult;
   if (val === undefined) return false;
   notifyBackground(val === '1');
   return true;
-}
+};
 
 // Icon switching ke liye — MutationObserver se background ko notify karo
 if (!readAndNotify()) {
