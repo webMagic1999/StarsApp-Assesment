@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shopify Detector</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="popup-wrap">
+
+      <div id="status-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M16.5 7.5C16.5 5.01 14.49 3 12 3C9.51 3 7.5 5.01 7.5 7.5H4.5L3 21H21L19.5 7.5H16.5Z"
+            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+          />
+          <path
+            d="M9 7.5C9 9.16 10.34 10.5 12 10.5C13.66 10.5 15 9.16 15 7.5"
+            stroke-width="1.6" stroke-linecap="round"
+          />
+        </svg>
+      </div>
+
+      <p id="status-title">Scanning...</p>
+      <p id="status-sub"></p>
+
+      <div id="popup-footer">
+        <span>ShopifyDetector</span>
+        <span class="footer-dot">·</span>
+        <span>by mgour</span>
+      </div>
+
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

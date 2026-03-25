@@ -1,0 +1,98 @@
+#sd-banner {
+  all: initial;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2147483647;
+  box-sizing: border-box;
+  animation: sd-slide-down 0.35s ease forwards;
+}
+
+#sd-banner.sd-banner--closing {
+  animation: sd-slide-up 0.3s ease forwards;
+}
+
+@keyframes sd-slide-down {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+@keyframes sd-slide-up {
+  from { transform: translateY(0);     opacity: 1; }
+  to   { transform: translateY(-100%); opacity: 0; }
+}
+
+#sd-banner .sd-inner {
+  all: initial;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a1a1a;
+  border-bottom: 2px solid #96bf48;
+  padding: 0 20px;
+  height: 44px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+#sd-banner .sd-left {
+  all: initial;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#sd-banner .sd-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+#sd-banner .sd-label {
+  all: initial;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+#sd-banner .sd-right {
+  all: initial;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+#sd-banner .sd-credit {
+  all: initial;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 11px;
+  color: #96bf48;
+  letter-spacing: 0.2px;
+  opacity: 0.85;
+}
+
+#sd-banner .sd-close {
+  all: initial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #aaaaaa;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  line-height: 1;
+}
+
+#sd-banner .sd-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
